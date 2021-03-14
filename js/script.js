@@ -34,6 +34,10 @@ else if(playerInput == '3') {
     playerMove = 'nożyce';
   }
 
+  else if(playerInput >4) {
+    playerMove = 'nieznany ruch';
+  }
+
 if(randomNumber == 1) {
   computerMove = 'kamień';
 }
@@ -45,3 +49,26 @@ else if(randomNumber == 3) {
 }
 
 printMessage('Twój ruch to: ' + playerMove);
+
+if( computerMove == 'kamień' && playerMove == 'papier'){
+    printMessage('Ty wygrywasz!');
+  }
+else if( computerMove == 'kamień' && playerMove == 'nożyce'){
+    printMessage('Computer wygrał tym razem!');
+  }
+else if( computerMove == 'nożyce' && playerMove == 'papier'){
+    printMessage('Computer wygrał tym razem!');
+  }
+  else if( computerMove == 'papier' && playerMove == 'nożyce'){
+    printMessage('Ty wygrywasz!');
+  }
+
+  else if( (computerMove == 'papier' && playerMove == 'papier') || 
+  (computerMove == 'kamień' && playerMove == 'kamień') ||
+  (computerMove == 'nożyce' && playerMove == 'nożyce')){
+    printMessage('Remis!');
+  }
+
+  else if( playerMove == 'ruch nieznany'){
+    printMessage(' Twój ruch jest poza zakresem');
+  }
