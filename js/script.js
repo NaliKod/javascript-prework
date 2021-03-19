@@ -1,7 +1,8 @@
-function playGame(playerInput) {
+{
+  function playGame(playerInput) {
   clearMessages();
 
-  function getMoveName(argMoveId) {
+  const getMoveName = function (argMoveId) {
     if (argMoveId == 1) {
       console.log('move:', argMoveId);
       return 'kamień';
@@ -17,11 +18,11 @@ function playGame(playerInput) {
       return 'nieznany ruch';
     }
   }
-  let randomNumber = Math.floor(Math.random() * 3 + 1);
+  const randomNumber = Math.floor(Math.random() * 3 + 1);
 
   console.log('Wylosowana liczba to: ' + randomNumber);
 
-  function displayResult(argComputerMove, argPlayerMove) {
+   const displayResult = function (argComputerMove, argPlayerMove) {
     console.log('moves:', argComputerMove, argPlayerMove);
     printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
 
@@ -49,7 +50,7 @@ function playGame(playerInput) {
     }
   }
 
-  let computerMove = getMoveName(randomNumber);
+  const computerMove = getMoveName(randomNumber);
 
  // printMessage('Ruch komputera to: ' + computerMove);
 
@@ -57,7 +58,7 @@ function playGame(playerInput) {
 
   //console.log('Gracz wpisał: ' + playerInput);
 
-  let playerMove = getMoveName(playerInput)
+  const playerMove = getMoveName(playerInput)
 
   //printMessage('Twój ruch to: ' + playerMove);
 
@@ -78,3 +79,4 @@ document.getElementById('play-scissors').addEventListener('click', function () {
   //printMessage('Wybrałeś nożyce');
   playGame(3);
 });
+}
